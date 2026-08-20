@@ -1,0 +1,392 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+:root {
+    --aqua: #25d9d3;
+    --aqua-dark: #16aaa7;
+    --navy: #071b2b;
+    --navy2: #0b2638;
+    --text: #f4ffff;
+    --muted: #b5c8cf;
+    --line: rgba(130, 220, 222, .24)
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #061827, #09283a);
+    color: var(--text);
+    min-height: 100vh
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+.site-shell {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: rgba(8, 31, 47, .92);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none
+}
+
+.navbar {
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    border-bottom: 1px solid rgba(150, 220, 220, .12)
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: .2px
+}
+
+.logo span {
+    color: var(--aqua)
+}
+
+.navbar nav {
+    display: flex;
+    gap: 34px;
+    font-size: 15px;
+    color: #d9e6e9
+}
+
+.navbar nav a {
+    padding: 8px 0;
+    position: relative
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #fff
+}
+
+.navbar nav a.active:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--aqua);
+    border-radius: 3px
+}
+
+.hero {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    align-items: center;
+    gap: 45px;
+    padding: 80px 8vw 90px;
+    position: relative;
+    overflow: hidden
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    width: 560px;
+    height: 230px;
+    left: 30%;
+    top: 42%;
+    background: rgba(37, 217, 211, .08);
+    filter: blur(70px);
+    border-radius: 50%
+}
+
+.intro {
+    position: relative;
+    z-index: 1;
+    max-width: 690px
+}
+
+.eyebrow {
+    color: var(--aqua);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 17px
+}
+
+.intro h1 {
+    font-size: 56px;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin-bottom: 10px
+}
+
+.intro h1 span {
+    color: var(--aqua)
+}
+
+.role {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 18px
+}
+
+.bio {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 650px;
+    margin-bottom: 28px
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 16px
+}
+
+.button {
+    background: #fff;
+    color: #18313d;
+    padding: 12px 26px;
+    border-radius: 24px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .2s
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    background: var(--aqua)
+}
+
+.photo-side {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1
+}
+
+.photo-wrap {
+    width: 315px;
+    height: 390px;
+    position: relative
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50% / 45%;
+    border: 0;
+    box-shadow: none;
+    background: #153746
+}
+
+.photo-ring {
+    display: none
+}
+
+.corner {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-color: var(--aqua);
+    z-index: 2
+}
+
+.top-left {
+    top: -14px;
+    left: -14px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-radius: 14px 0 0 0
+}
+
+.bottom-right {
+    right: -14px;
+    bottom: -14px;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    border-radius: 0 0 14px 0
+}
+
+.page {
+    flex: 1;
+    padding: 70px 60px 80px
+}
+
+.page h1 {
+    font-size: 44px;
+    margin-bottom: 10px
+}
+
+.page>p {
+    color: var(--muted);
+    max-width: 760px;
+    line-height: 1.7;
+    margin-bottom: 35px
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px
+}
+
+.card,
+.exam-card {
+    background: rgba(255, 255, 255, .035);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px
+}
+
+.card h2,
+.exam-card h3 {
+    color: var(--aqua);
+    margin-bottom: 9px
+}
+
+.card p {
+    color: var(--muted);
+    line-height: 1.65;
+    font-size: 14px
+}
+
+.exam-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px
+}
+
+.exam-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background: #061824;
+    border-radius: 10px;
+    border: 1px solid rgba(130, 220, 222, .14)
+}
+
+.exam-card h3 {
+    margin-top: 14px;
+    margin-bottom: 0
+}
+
+footer {
+    height: 54px;
+    border-top: 1px solid rgba(150, 220, 220, .12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9fb3ba;
+    font-size: 12px
+}
+
+@media(max-width:850px) {
+    .navbar {
+        height: auto;
+        padding: 22px 28px;
+        align-items: flex-start;
+        gap: 20px
+    }
+
+    .navbar nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: flex-end
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 55px 28px 70px
+    }
+
+    .intro {
+        margin: auto
+    }
+
+    .bio {
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .actions {
+        justify-content: center
+    }
+
+    .photo-side {
+        order: -1
+    }
+
+    .photo-wrap {
+        width: 250px;
+        height: 315px
+    }
+
+    .intro h1 {
+        font-size: 42px
+    }
+
+    .cards,
+    .exam-gallery {
+        grid-template-columns: 1fr
+    }
+
+    .page {
+        padding: 55px 28px 70px;
+        text-align: center
+    }
+
+    .page>p {
+        margin-left: auto;
+        margin-right: auto
+    }
+}
+
+@media(max-width:560px) {
+    .site-shell {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        border-radius: 0;
+        border: 0
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center
+    }
+
+    .navbar nav {
+        justify-content: center
+    }
+
+    .intro h1 {
+        font-size: 35px
+    }
+
+    .role {
+        font-size: 21px
+    }
+
+    .photo-wrap {
+        width: 215px;
+        height: 275px
+    }
+}
